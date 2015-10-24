@@ -22,15 +22,15 @@ class ExpandedList {
     }
 
     public ExpandedList add(Expanded element) {
-        Set<Expanded> neweElements = new TreeSet<>(elements);
-        neweElements.add(element);
-        return new ExpandedList(neweElements);
+        Set<Expanded> newElements = new TreeSet<>(elements);
+        newElements.add(element);
+        return new ExpandedList(newElements);
     }
 
     public ExpandedList add(ExpandedList expandedList) {
-        Set<Expanded> neweElements = new TreeSet<>(elements);
-        neweElements.addAll(expandedList.elements);
-        return new ExpandedList(neweElements);
+        Set<Expanded> newElements = new TreeSet<>(elements);
+        newElements.addAll(expandedList.elements);
+        return new ExpandedList(newElements);
     }
 
     public List<Expanded> getElements() {
