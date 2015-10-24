@@ -1,0 +1,22 @@
+package ugly;
+
+/**
+ * The interface to be implemented by the Expanded classes.
+ */
+interface Expanded<T> {
+
+    /**
+     * Merges current expanded value with the argument expanded value.
+     *
+     * @param other argument to be merged.
+     * @return Merged expressionResult.
+     */
+    Expanded merge(Expanded other);
+
+    /**
+     * @return Result of this expanded value.
+     */
+    T result();
+
+
+}
