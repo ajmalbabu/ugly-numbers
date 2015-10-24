@@ -48,3 +48,7 @@ Print out the number of expressions that evaluate to an ugly number for each tes
 - 6
 - 64
 
+#### Solution
+
+Look at the Main.java and resources folder for an input file.
+
