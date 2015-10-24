@@ -3,7 +3,7 @@ package ugly;
 /**
  * Holds an expression for e.g. of the format "0+1-1" and expressionResult of the expression calculated.
  */
-class Expression implements Expanded, Comparable<Expression> {
+class Expression implements Expanded {
 
 
     /**
@@ -83,7 +83,7 @@ class Expression implements Expanded, Comparable<Expression> {
     }
 
     @Override
-    public int compareTo(Expression other) {
-        return actualExpression.compareTo(other.actualExpression);
+    public int compareTo(Object other) {
+        return actualExpression.compareTo(((Expression) other).actualExpression);
     }
 }

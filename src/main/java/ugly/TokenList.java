@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Holds an TokenList for e.g. for a number of the format 012 the tokens held are (0,1,2).
  */
-class TokenList implements Expanded, Expandable, Comparable<TokenList> {
+class TokenList implements Expanded, Expandable {
 
     private final List<String> tokens;
 
@@ -100,7 +100,7 @@ class TokenList implements Expanded, Expandable, Comparable<TokenList> {
 
 
     @Override
-    public int compareTo(TokenList other) {
-        return tokens.toString().compareTo(other.tokens.toString());
+    public int compareTo(Object other) {
+        return tokens.toString().compareTo(((TokenList) other).tokens.toString());
     }
 }

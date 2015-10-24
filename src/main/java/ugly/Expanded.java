@@ -3,7 +3,7 @@ package ugly;
 /**
  * The interface to be implemented by the Expanded classes.
  */
-interface Expanded<T> {
+interface Expanded<T> extends Comparable {
 
     /**
      * Merges current expanded value with the argument expanded value.
