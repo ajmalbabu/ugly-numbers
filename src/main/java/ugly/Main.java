@@ -7,8 +7,7 @@ import java.io.IOException;
 
 
 /**
- * Main class method to invoke the Ugly Service. All the classes are code in same file because of upload constraint,
- * JDK 1.8 good features are not used because of upload constraints.
+ * Main class method to invoke the Ugly Service.
  */
 public class Main {
 
