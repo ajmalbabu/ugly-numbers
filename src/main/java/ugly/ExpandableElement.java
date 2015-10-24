@@ -18,7 +18,7 @@ class ExpandableElement {
      */
     private final Expandable expandable;
 
-    public ExpandableElement(Expanded expanded, Expandable expandable) {
+    private ExpandableElement(Expanded expanded, Expandable expandable) {
         this.expanded = expanded;
         this.expandable = expandable;
     }
@@ -53,4 +53,16 @@ class ExpandableElement {
 
         return result;
     }
+
+    public static ExpandableElement createNextExpandableElement(Expanded expanded, Expandable expandable) {
+        if (expandable == null) {
+            throw new IllegalArgumentException("expandable can't be null, createFullyExpandedElement for fully expanded. value: " + expanded);
+        }
+        return new ExpandableElement(expanded, expandable);
+    }
+
+    public static ExpandableElement createFullyExpandedElement(Expanded expanded) {
+        return new ExpandableElement(expanded, null);
+    }
+
 }

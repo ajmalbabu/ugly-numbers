@@ -3,6 +3,9 @@ package ugly;
 import java.util.ArrayList;
 import java.util.List;
 
+import static ugly.ExpandableElement.createFullyExpandedElement;
+import static ugly.ExpandableElement.createNextExpandableElement;
+
 /**
  * Holds an TokenList for e.g. for a number of the format 012 the tokens held are (0,1,2).
  */
@@ -52,11 +55,11 @@ class TokenList implements Expanded, Expandable {
 
         if (right != null) {
 
-            expandableElementList.add(new ExpandableElement(expanded(1, OperatorEnum.PLUS), right));
-            expandableElementList.add(new ExpandableElement(expanded(1, OperatorEnum.MINUS), right));
+            expandableElementList.add(createNextExpandableElement(expanded(1, OperatorEnum.PLUS), right));
+            expandableElementList.add(createNextExpandableElement(expanded(1, OperatorEnum.MINUS), right));
 
         } else {
-            expandableElementList.add(new ExpandableElement(expanded(1, null), null));
+            expandableElementList.add(createFullyExpandedElement(expanded(1, null)));
 
         }
 

@@ -3,6 +3,9 @@ package ugly;
 import java.util.ArrayList;
 import java.util.List;
 
+import static ugly.ExpandableElement.createFullyExpandedElement;
+import static ugly.ExpandableElement.createNextExpandableElement;
+
 /**
  * Request with value of the format "011".
  */
@@ -28,7 +31,12 @@ class TokenListRequest implements Expandable {
         List<ExpandableElement> expandableElementList = new ArrayList<>();
 
         for (int length = 1; length <= length(); length++) {
-            expandableElementList.add(new ExpandableElement(expanded(length), expandable(length)));
+            Expandable expandable = expandable(length);
+            if (expandable != null) {
+                expandableElementList.add(createNextExpandableElement(expanded(length), expandable(length)));
+            } else {
+                expandableElementList.add(createFullyExpandedElement(expanded(length)));
+            }
         }
 
         return expandableElementList;
